@@ -13,6 +13,7 @@ class Car:
         self._company = company
         self._details = details
 
+    # instance method
     def detail_info(self):
         print(f"Current ID : {id(self)}")
         print(f"Car Detail Info : {self._company} {self._details.get('price')}")
@@ -22,6 +23,22 @@ class Car:
 
     def get_price_calc(self):
         return f'After car price: company -> {self._company}, price -> {self._details.get("price") * Car.price_per_raise}'
+
+    # class method
+    @classmethod
+    def raise_price(cls, per):
+        if per <= 1:
+            print("Please Enter 1 or More")
+            return
+        cls.price_per_raise = per
+        print("Succeed! price increased.")
+
+    # static method
+    @staticmethod
+    def is_bmw(inst):
+        if inst._company == "Bmw":
+            return f"OK! This car is {inst._company}."
+        return "Sorry. This car is not Bmw."
 
     def __str__(self):
         return f"str : {self._company} - {self._details}"
@@ -40,7 +57,19 @@ print(car1._details.get("price"))
 # 가격 인상 전
 print(car1.get_price())
 
-Car.price_per_raise = 1.5
+Car.price_per_raise = 1.4  # 클래스 메소드 직접 접근 (권장X)
 # 가격 인상 후
 print(car1.get_price_calc())
 
+# 클래스 메소드 사용
+Car.raise_price(0.9)
+Car.raise_price(1.6)
+
+# 가격 인상 후
+print(car1.get_price_calc())
+
+# static method 호출
+print(car1.is_bmw(car1))
+print(car2.is_bmw(car2))
+print(Car.is_bmw(car1))
+print(Car.is_bmw(car2))
