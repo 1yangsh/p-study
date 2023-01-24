@@ -1,4 +1,4 @@
-# Chapter05-01
+# Chapter04-04
 # 시퀀스형
 # 해시 테이블 (hashTable) -> 적은 리소스로 많은 데이터를 효율적으로 관리
 # Dict -> Key 중복 허용 X, Set -> 중복 허용 X

@@ -23,7 +23,7 @@ print(l_leng_1)
 from collections import namedtuple
 
 # 네임드 튜플 선언
-Point = namedtuple('Point', 'x y')
+Point = namedtuple("Point", "x y")
 
 pt3 = Point(1.0, 5.0)
 pt4 = Point(2.5, 1.5)
@@ -39,16 +39,16 @@ print(l_leng_2, l_leng_3)
 
 
 # 네임드 튜플 선언 방법
-Point1 = namedtuple('Point', ['x', 'y'])  # 1
-Point2 = namedtuple('Point', 'x, y')  # 2
-Point3 = namedtuple('Point', 'x y')  # 3
-Point4 = namedtuple('Point', 'x, y, x, class', rename=True)  # default = False
+Point1 = namedtuple("Point", ["x", "y"])  # 1
+Point2 = namedtuple("Point", "x, y")  # 2
+Point3 = namedtuple("Point", "x y")  # 3
+Point4 = namedtuple("Point", "x, y, x, class", rename=True)  # default = False
 
 # 출력
 print(Point1, Point2, Point3, Point4)
 
 # Dict to Unpacking
-temp_dict = {'x': 75, 'y': 55}
+temp_dict = {"x": 75, "y": 55}
 
 
 # 객체 생성
@@ -92,11 +92,11 @@ print(p4._asdict())
 # 실 사용 실습
 # 반 20 명, 4 개의 반 (A,B,C,D)
 
-Classes = namedtuple('Classes', ['rank', 'number'])
+Classes = namedtuple("Classes", ["rank", "number"])
 
 # 그룹 리스트 선언
 numbers = [str(n) for n in range(1, 21)]
-ranks = 'A B C D'.split()
+ranks = "A B C D".split()
 
 print(numbers)
 print(ranks)
@@ -108,9 +108,11 @@ print(len(students))
 print(students)
 
 # 추천
-students2 = [Classes(rank, number)
-             for rank in 'A B C D'
-             for number in [str(n) for n in range(1, 21)]]
+students2 = [
+    Classes(rank, number)
+    for rank in "A B C D"
+    for number in [str(n) for n in range(1, 21)]
+]
 
 print(students2)
 
@@ -118,7 +120,3 @@ print(students2)
 # 출력
 for s in students2:
     print(s)
-
-
-
-

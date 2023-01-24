@@ -1,4 +1,4 @@
-# Chapter05-01
+# Chapter04-03
 # 시퀀스형
 # 컨테이너(Container: 서로 다른 자료형[list, tuple, collections.deque])
 # 플랫(Flat: 한 개의 자료형[str, bytes, bytearray, array.array, memoryview])

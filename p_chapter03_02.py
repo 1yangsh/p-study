@@ -8,43 +8,45 @@
 # (10,3) * 5 = (50,15)
 # Max((5,10)) = 10
 
+
 class Vector(object):
-    '''
+    """
     Vector Class
-    '''
+    """
+
     def __init__(self, *args):
-        '''
+        """
         Create a Vector, example: v = Verctor(5, 10)
         :param args:
         x: Int
         y: Int
-        '''
+        """
         if len(args) == 0:
             self._x, self._y = 0, 0
         else:
             self._x, self._y = args
 
     def __repr__(self):
-        '''
+        """
         Return the Vector informations.
         :return:
-        '''
+        """
         return f"Vector({self._x}, {self._y}) "
 
     def __add__(self, other):
-        '''
+        """
         Return the vector adddtion of self and other
         :param other:
         :return:
-        '''
+        """
         return Vector(self._x + other._x, self._y + other._y)
 
     def __mul__(self, y):
-        '''
+        """
         Return the vector multiply of self and other
         :param other:
         :return:
-        '''
+        """
         return Vector(self._x * y, self._y * y)
 
     def __bool__(self):
@@ -67,6 +69,3 @@ print(v1 + v2)
 print(v1 * 10)
 
 print(bool(v1), bool(v2), bool(v3))
-
-
-
